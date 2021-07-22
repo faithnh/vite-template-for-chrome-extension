@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "vite_for_chrome_extension",
+  "version": "0.0.0.0",
+  "action": {
+    "name": "test",
+    "default_popup":"index.html"
+  },
+  "web_accessible_resources" : [{
+    "resources": [
+      "index.html", "main.js"
+    ],
+    "matches": ["http://*/*", "https://*/*", "*://*/*"],
+    "extension_ids": []
+  }],
+  "icons": {
+    "32": "public/logo192.png",
+    "64": "public/logo192.png",
+    "128": "public/logo192.png",
+    "512": "public/logo192.png"
+  },
+  "background" : {
+    "service_worker" : "./background.js"
+  },
+  "content_scripts" : [],
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "clipboardWrite",
+    "clipboardRead",
+    "storage",
+    "unlimitedStorage",
+    "alarms",
+    "scripting"
+  ],
+  "host_permissions" : [
+    "http://*/*",
+    "https://*/*",
+    "*://*/*"
+  ]
+}
